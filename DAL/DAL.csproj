@@ -43,6 +43,8 @@
     <Compile Include="Class1.cs" />
     <Compile Include="Client.cs" />
     <Compile Include="ClientDAO.cs" />
+    <Compile Include="Command.cs" />
+    <Compile Include="CommandDAO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
