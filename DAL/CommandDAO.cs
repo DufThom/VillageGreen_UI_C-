@@ -37,13 +37,15 @@ namespace DAL
                 Com.IdClient = Convert.ToInt32(Result["IdClient"]);
 
                 Liste.Add(Com);
+
+                
             }
             Connex.Close();
             return Liste;
         }
 
         
-
+        
 
 
 

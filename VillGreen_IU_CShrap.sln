@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAL", "DAL\DAL.csproj", "{B
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test_Consol_VillGreen", "Test_Consol_VillGreen\Test_Consol_VillGreen.csproj", "{06C5B3AA-EC9F-4D7C-B395-4F7E012103EB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTest_VillGreen", "UnitTest_VillGreen\UnitTest_VillGreen.csproj", "{7AE70455-56CD-4FAD-9C52-9929990803AA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{06C5B3AA-EC9F-4D7C-B395-4F7E012103EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{06C5B3AA-EC9F-4D7C-B395-4F7E012103EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{06C5B3AA-EC9F-4D7C-B395-4F7E012103EB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7AE70455-56CD-4FAD-9C52-9929990803AA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7AE70455-56CD-4FAD-9C52-9929990803AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7AE70455-56CD-4FAD-9C52-9929990803AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7AE70455-56CD-4FAD-9C52-9929990803AA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
