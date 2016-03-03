@@ -1,6 +1,6 @@
 ﻿namespace Interrogation_VilGreen
 {
-    partial class Form1
+    partial class Interface_Utilisateur
     {
         /// <summary>
         /// Variable nécessaire au concepteur.

@@ -8,17 +8,18 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DAL;
+using System.Text.RegularExpressions;
 
 namespace Interrogation_VilGreen
 {
 
-    public partial class Form1 : Form
+    public partial class Interface_Utilisateur : Form
     {
         ClientDAO data = new ClientDAO();
         CommandDAO dataCom = new CommandDAO();
         string Action = "";
 
-        public Form1()
+        public Interface_Utilisateur()
         {
             InitializeComponent();
             this.Height = 344; // Taille du Form en petit, et 506 en grand
@@ -32,7 +33,7 @@ namespace Interrogation_VilGreen
 
             radioButton1.Visible = false; // Cache le CheckBox "Particulier"
             radioButton2.Visible = false; // Cache le CheckBox "Professionnel"
-            // Affichage Gestion Commercial : 
+            // Affichage Gestion Commerciaux : 
             label5.Visible = true; // affiche label "Nom Commercial"
             textBox4.Visible = true; // Affiche TextBox Commercial
             groupBox2.Visible = false; // Cache le GroupBox Commercial
@@ -51,7 +52,7 @@ namespace Interrogation_VilGreen
             radioButton1.Visible = false; // Cache le CheckBox "Particulier"
             radioButton2.Visible = false; // Cache le CheckBox "Professionnel"
             dataGridView1.DataSource = null; // Initialise le DGV à chaque fois qu'on séléctionne un autre client
-            // Affichage Gestion Commercial : 
+            // Affichage Gestion Commerciaux : 
             label5.Visible = true; // affiche label "Nom Commercial"
             textBox4.Visible = true; // Affiche TextBox Commercial
             groupBox2.Visible = false; // Cache le GroupBox Commercial
@@ -109,7 +110,7 @@ namespace Interrogation_VilGreen
             textBox4.Text = "";
             this.Height = 344;
             dataGridView1.DataSource = null;
-            // Gestion partie Commercial : 
+            // Gestion partie Commerciaux : 
             label5.Visible = false; //Cache "Nom Commercial:"
             textBox4.Visible = false; // Cache textbox Commercial
             groupBox2.Visible = true; // Affiche GroupBox "Commercial:"
@@ -210,10 +211,14 @@ namespace Interrogation_VilGreen
 
         private void button6_Click(object sender, EventArgs e) // Btn "OK" qui valide l'Ajout, Modif et Supp
         {
+            Regex TxtNom = new Regex(@"^[a-zA-Z]{3,100}$");
+            Regex TxtAdrFact = new Regex(@"^[a-zA-Z0-9'-_ ]{3,200}$");
+            Regex TxtAdrLiv = new Regex(@"^[a-zA-Z0-9'-_ ]{3,200}$");
+
             if (Action == "Ajouter")
             {
-
                 Client Cli = new Client();
+                // Choisir Client Pro ou Particulier : 
                 if (radioButton1.Checked == true)
                 {
                     Cli.ClientPro = false;
@@ -225,10 +230,39 @@ namespace Interrogation_VilGreen
                     //button6.Enabled = true;
                 }
 
-                Cli.NomClient = textBox1.Text;
-                Cli.AdressFact = textBox2.Text;
-                Cli.AdressLiv = textBox3.Text;
+                
+                if (TxtNom.IsMatch(textBox1.Text))
+                {
+                    Cli.NomClient = textBox1.Text;
+                    textBox1.BackColor = SystemColors.Window;
+                }
+                else
+                {
+                    textBox1.BackColor = Color.Red;
+                }
 
+                if (TxtAdrFact.IsMatch(textBox2.Text))
+                {
+                    Cli.AdressFact = textBox2.Text;
+                    textBox2.BackColor = SystemColors.Window;
+                }
+                else
+                {
+                    textBox2.BackColor = Color.Red;
+                }
+
+                if (TxtAdrLiv.IsMatch(textBox3.Text))
+                {
+                    Cli.AdressLiv = textBox3.Text;
+                    textBox3.BackColor = SystemColors.Window;
+                }
+                else
+                {
+                    textBox3.BackColor = Color.Red;
+                }
+
+
+                // Choisir un Commercial : 
                 if (radioButton3.Checked == true)
                 {
                     Cli.IdComm = 1;
@@ -239,9 +273,13 @@ namespace Interrogation_VilGreen
                     Cli.IdComm = 2;
                     //button6.Enabled = true;
                 }
-                
-                data.Insert(Cli);
-                listBox1.DataSource = data.List();
+
+                // si tous les champs text sont ok : 
+                if (TxtNom.IsMatch(textBox1.Text) && TxtAdrFact.IsMatch(textBox2.Text) && TxtAdrLiv.IsMatch(textBox3.Text))
+                {
+                    data.Insert(Cli);
+                    listBox1.DataSource = data.List();
+                }
                 
             }
 
@@ -258,9 +296,37 @@ namespace Interrogation_VilGreen
                 {
                     Cli.ClientPro = true;
                 }
-                Cli.NomClient = textBox1.Text;
-                Cli.AdressFact = textBox2.Text;
-                Cli.AdressLiv = textBox3.Text;
+
+                if (TxtNom.IsMatch(textBox1.Text))
+                {
+                    Cli.NomClient = textBox1.Text;
+                    textBox1.BackColor = SystemColors.Window;
+                }
+                else
+                {
+                    textBox1.BackColor = Color.Red;
+                }
+
+                if (TxtAdrFact.IsMatch(textBox2.Text))
+                {
+                    Cli.AdressFact = textBox2.Text;
+                    textBox2.BackColor = SystemColors.Window;
+                }
+                else
+                {
+                    textBox2.BackColor = Color.Red;
+                }
+
+                if (TxtAdrLiv.IsMatch(textBox3.Text))
+                {
+                    Cli.AdressLiv = textBox3.Text;
+                    textBox3.BackColor = SystemColors.Window;
+                }
+                else
+                {
+                    textBox3.BackColor = Color.Red;
+                }
+
                 if (radioButton3.Checked == true)
                 {
                     Cli.IdComm = 1;
@@ -270,8 +336,12 @@ namespace Interrogation_VilGreen
                     Cli.IdComm = 2;
                 }
 
-                data.Update(Cli);
-                listBox1.DataSource = data.List();
+                if (TxtNom.IsMatch(textBox1.Text) && TxtAdrFact.IsMatch(textBox2.Text) && TxtAdrLiv.IsMatch(textBox3.Text))
+                {
+                    data.Update(Cli);
+                    listBox1.DataSource = data.List();
+                }
+                
             }
 
             if (Action == "Supprimer")
@@ -306,9 +376,13 @@ namespace Interrogation_VilGreen
             radioButton3.Visible = false; //Cache le radioBtn "M. Véherpé"
             radioButton4.Visible = false; //Cache le radioBtn "Mme Commerre"
             textBox1.Text = "";
+            textBox1.BackColor = SystemColors.Window;
             textBox2.Text = "";
+            textBox2.BackColor = SystemColors.Window;
             textBox3.Text = "";
+            textBox3.BackColor = SystemColors.Window;
             textBox4.Text = "";
+            textBox4.BackColor = SystemColors.Window;
             groupBox1.Text = "";
 
 
@@ -331,9 +405,13 @@ namespace Interrogation_VilGreen
             radioButton3.Visible = false; //Cache le radioBtn "M. Véherpé"
             radioButton4.Visible = false; //Cache le radioBtn "Mme Commerre"
             textBox1.Text = "";
+            textBox1.BackColor = SystemColors.Window;
             textBox2.Text = "";
+            textBox2.BackColor = SystemColors.Window;
             textBox3.Text = "";
+            textBox3.BackColor = SystemColors.Window;
             textBox4.Text = "";
+            textBox4.BackColor = SystemColors.Window;
             groupBox1.Text = "";
 
         }

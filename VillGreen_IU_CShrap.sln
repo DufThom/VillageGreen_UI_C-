@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test_Consol_VillGreen", "Te
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTest_VillGreen", "UnitTest_VillGreen\UnitTest_VillGreen.csproj", "{7AE70455-56CD-4FAD-9C52-9929990803AA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Accueil_Mail", "Accueil_Mail\Accueil_Mail.csproj", "{5A18E589-5AB1-4746-BE64-5AC60A688D20}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{7AE70455-56CD-4FAD-9C52-9929990803AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7AE70455-56CD-4FAD-9C52-9929990803AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7AE70455-56CD-4FAD-9C52-9929990803AA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5A18E589-5AB1-4746-BE64-5AC60A688D20}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5A18E589-5AB1-4746-BE64-5AC60A688D20}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5A18E589-5AB1-4746-BE64-5AC60A688D20}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5A18E589-5AB1-4746-BE64-5AC60A688D20}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

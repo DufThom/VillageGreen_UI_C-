@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Interrogation_VilGreen
+namespace Accueil_Mail
 {
     static class Program
     {
@@ -16,7 +16,7 @@ namespace Interrogation_VilGreen
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Interface_Utilisateur());
+            Application.Run(new Accueil_Mail());
         }
     }
 }
