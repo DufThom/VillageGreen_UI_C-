@@ -13,6 +13,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTest_VillGreen", "UnitT
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Accueil_Mail", "Accueil_Mail\Accueil_Mail.csproj", "{5A18E589-5AB1-4746-BE64-5AC60A688D20}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mail_Console", "Mail_Console\Mail_Console.csproj", "{8176194D-EDA6-4CBE-95C6-D0ABCC0C85B3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTest_Mail", "UnitTest_Mail\UnitTest_Mail.csproj", "{0A9B5BC1-D0F6-414C-AB47-F11932ADD13E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +43,14 @@ Global
 		{5A18E589-5AB1-4746-BE64-5AC60A688D20}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5A18E589-5AB1-4746-BE64-5AC60A688D20}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5A18E589-5AB1-4746-BE64-5AC60A688D20}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8176194D-EDA6-4CBE-95C6-D0ABCC0C85B3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8176194D-EDA6-4CBE-95C6-D0ABCC0C85B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8176194D-EDA6-4CBE-95C6-D0ABCC0C85B3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8176194D-EDA6-4CBE-95C6-D0ABCC0C85B3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0A9B5BC1-D0F6-414C-AB47-F11932ADD13E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0A9B5BC1-D0F6-414C-AB47-F11932ADD13E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0A9B5BC1-D0F6-414C-AB47-F11932ADD13E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0A9B5BC1-D0F6-414C-AB47-F11932ADD13E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
