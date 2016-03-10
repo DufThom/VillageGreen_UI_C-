@@ -84,6 +84,10 @@
       <Project>{a53785ce-d5e9-494a-b1bd-e1b4b6692b62}</Project>
       <Name>Interrogation_VilGreen</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Mail_Console\Mail_Console.csproj">
+      <Project>{8176194d-eda6-4cbe-95c6-d0abcc0c85b3}</Project>
+      <Name>Mail_Console</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
